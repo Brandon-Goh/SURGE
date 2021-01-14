@@ -1,0 +1,25 @@
+::selection {
+  background-color:#09c3b3;
+  color: #fff;
+}
+::-moz-selection {
+  background-color:#09c3b3;
+  color: #fff;
+}
+
+
+header .k-navbar-nav li a.active,
+header .k-navbar-nav li a:hover,
+.theme-color {
+  color:#f44336;
+}
+
+.theme-border {
+	border-color: #f44336;
+}
+
+.m-btn, /*--log in button--*/
+.theme-after:after,
+.theme-bg {
+  background: #cc0000;
+}

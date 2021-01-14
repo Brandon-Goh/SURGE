@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SURGE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="icon" type="image/jpg" href="static\img\S_logo1.png">
+  <link href="static/css/styles.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: rgb(0, 0, 0);
+      color: white;
+      padding: 15px;
+    }
+  </style>
+  <style>
+    .dropbtn {
+      background-color: #db3434;
+      color: white;
+      padding: 5px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropbtn:hover, .dropbtn:focus {
+      background-color: #b10a0a;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown a:hover {background-color: #ddd;}
+    
+    .show {display: block;}
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid" style="background-color: #000000;">
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="feed.html"><img src="static/img/logo1.png" width="75" height="75"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Groups</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" placeholder="Search..">
+          <span class="input-group-btn">
+            <button style="margin-bottom: 40px" class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </span>
+          <a href="index.html" style="background-color: #cc0000; border-color:red; color:white; margin-left: 15px; margin-bottom: 35px" class="feed-btn">Logout</a>        
+        </div>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+  
+<div class="container text-center">    
+  <div class="row">
+    <div class="col-sm-3 well">
+      <div class="well">
+        <p><a href="#">My Profile</a></p>
+        <img src="static\img\pfp1.JPG" class="img-circle" height="65" width="65" alt="Avatar">
+      </div>
+      <div class="well">
+        <p><a href="#">Interests</a></p>
+        <p>
+          <a href="blm.html"><span class="label label-default">Black Lives Matter</span></a>
+          <span class="label label-primary">LGBTQ+</span>
+          <span class="label label-success">People with Disabilities</span>
+          <span class="label label-info">Mental Health</span>
+          <span class="label label-warning">Latinx Community</span>
+          <span class="label label-danger">Indigenous Peoples</span>
+        </p>
+      </div>
+      <div class="well">
+        <p><a href="#">Badges</a></p>
+        <p>
+          <img src="static\img\badge1.png" class="img-circle" height="65" width="65" alt="Avatar">
+          <img src="static\img\badge2.png" class="img-circle" height="65" width="65" alt="Avatar">
+          <img src="static\img\badge3.png" class="img-circle" height="65" width="65" alt="Avatar">
+        </p>
+      </div>
+      <p><a href="#">Instagram</a></p>
+      <p><a href="#">Twitter</a></p>
+      <p><a href="#">Facebook</a></p>
+      <p><a href="#">Youtube</a></p>
+    </div>
+    <div class="col-sm-7">
+    
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="panel panel-default text-left">
+            <div class="panel-body">
+              <p contenteditable="true">Voice your opinion...</p>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-plus-sign"></span> Attach
+              </button>     
+            </div>
+          </div>
+        </div>
+        <div class="dropdown">
+        <button onclick="myFunction()" style ="margin-top: -10px; margin-bottom: 10px; margin-right: 580px;" type="button" class="btn btn-default btn-sm dropbtn">
+            <span class="glyphicon glyphicon-filter"></span> Filter
+          </button>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Feed</a>
+            <a href="#">Following</a>
+            <a href="#">Most Recent</a>
+            <a href="#">Most Popular</a>
+            <a href="blm.html">Black Lives Matter</a>
+            <a href="#">LGBTQ+</a>
+            <a href="#">People with Disabilities</a>
+            <a href="#">More...</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>JacksonP09</p>
+           <img src="static\img\pfp2.JPG" class="img-circle" height="55" width="55" alt="Avatar">
+           <button style ="margin-top: 3px; margin-bottom: -3px;" type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-plus-sign"></span> Follow
+          </button>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Hey! Check this video out about the BLM movement! #BLM <iframe width="420" height="345" src="https://www.youtube.com/embed/4Vl4I0weXPU">
+            </iframe></p>
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Like
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-comment"></span> Comment
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-flag"></span> Report
+              </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Byrum990</p>
+           <img src="static\img\pfp4.JPG" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>South Africa’s president signed a law banning marriage officials from refusing to conduct same-sex marriages.
+
+                South Africa was the 5th country to legalize same-sex marriage and is the only country in Africa to do so, but anti-LGBTQ+ violence and discrimination is still common.
+                <img src="static\img\lgbt.jpg" width="420" height="345">
+            </p>
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Like
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-comment"></span> Comment
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-flag"></span> Report
+              </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>NicoleB3</p>
+           <img src="static\img\pfp3.JPG" class="img-circle" height="55" width="55" alt="Avatar">
+           <button style ="margin-top: 3px; margin-bottom: -3px;" type="button" class="btn btn-default btn-sm">
+            <span class="glyphicon glyphicon-plus-sign"></span> Follow
+          </button>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Indigenous people face racist backlash over pipeline protests! Want to learn how to help? Join our group where we give resources on how to support the cause!
+                <img src="static\img\protest.jpg" width="420" height="345">
+                <a style="background-color: #cc0000; border-color:red; color:white; margin-top: 5px" class="feed-btn">Join Group</a>
+            </p>
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Like
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-comment"></span> Comment
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-flag"></span> Report
+              </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>Cammy28</p>
+           <img src="static\img\pfp1.JPG" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>How to assist people with disabilities: https://www.heartandstroke.ca/accessibility/how-to-assist-people-with-disabilities
+                <img src="static\img\disability.png" width="420" height="345">
+            </p>
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Like
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-comment"></span> Comment
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-flag"></span> Report
+              </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>RockyS7</p>
+           <img src="static\img\pfp2.JPG" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>Don't forget about our seminar this Friday! We have Mental wellness and Leadership Expert, Dr. Lisa Bélanger speaking about the current mental health situation within our community and healthy ways to cope and support others. It will be held at DAR Constitutional Hall! Doors open at 7:30pm and the event begins at 8:00PM sharp! Registration link: https://www.register.com/ Hope to see y'all there :)</p>
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Like
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-comment"></span> Comment
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-flag"></span> Report
+              </button>
+        </div>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+           <p>LexiMB33</p>
+           <img src="static\img\pfp4.JPG" class="img-circle" height="55" width="55" alt="Avatar">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="well">
+            <p>While many of us are fortunate to be sheltering in place during this pandemic, farmworkers are putting themselves at risk daily in order to provide food for the rest of us. We simply cannot do without our agricultural heroes, yet they are disproportionately overlooked and underpaid. For this reason, AMiGOs has partnered with The Watsonville Campesino Appreciation Caravan (WCAC). Donate here!
+                https://ca.gofundme.com/f/5qmhe3-a-cause-i-care-about-needs-help
+                <img src="static\img\farmworkers.JPG" width="420" height="345">
+            </p>
+            <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-thumbs-up"></span> Like
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-comment"></span> Comment
+              </button>
+              <button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-flag"></span> Report
+              </button>
+          </div>
+        </div>
+      </div>       
+    </div>
+    <div class="col-sm-2 well">
+      <div class="thumbnail">
+        <p>Upcoming Event:</p>
+        <img src="static\img\blm.png" alt="BLM" width="400" height="300">
+        <p><strong>March on Washington</strong></p>
+        <p>Mon. 26 October 2020</p>
+        <button class="btn btn-primary">Info</button>
+      </div>      
+      <div class="thumbnail">
+        <p>Upcoming Event:</p>
+        <img src="static\img\pride.jpg" alt="Pride" width="400" height="300">
+        <p><strong>Capital Pride</strong></p>
+        <p>Fri. 4 June 2021</p>
+        <button class="btn btn-primary">Info</button>
+      </div>
+      <div class="thumbnail">
+        <p>Upcoming Event:</p>
+        <img src="static\img\latinxrally.jpg" alt="BLM" width="400" height="300">
+        <p><strong>RESPECT AT D.C. MARCH</strong></p>
+        <p>Wed. 7 July 2021</p>
+        <button class="btn btn-primary">Info</button>      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>SURGE 2020 &copy;</p>
+</footer>
+
+<script>
+    /* When the user clicks on the button, 
+    toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+    </script>
+</body>
+</html>
